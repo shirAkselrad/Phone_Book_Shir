@@ -5,34 +5,46 @@ let contactsArr =
     name: "Moshe Perez",
     infoImg: "./icons/info.png",
     editImg: "./icons/edit.png",
-    trashImg: "./icons/trash.png"
+    trashImg: "./icons/trash.png",
+    age: "33",
+    phoneNum: "123456789",
+    Address: "Nesher"
   },
   {
     image: "./images/women1.jpg",
     name: "Roni Dalomi",
     infoImg: "./icons/info.png",
     editImg: "./icons/edit.png",
-    trashImg: "./icons/trash.png"
+    trashImg: "./icons/trash.png",
+    age: "40",
+    phoneNum: "345678123",
+    Address: "Haifa"
   },
   {
     image: "./images/man2.jpg",
     name: "Aviv Gefen",
     infoImg: "./icons/info.png",
     editImg: "./icons/edit.png",
-    trashImg: "./icons/trash.png"
+    trashImg: "./icons/trash.png",
+    age: "25",
+    phoneNum: "432687219",
+    Address: "Tel-Aviv"
   },
   {
     image: "./images/women2.jpg",
     name: "Zehava Ben",
     infoImg: "./icons/info.png",
     editImg: "./icons/edit.png",
-    trashImg: "./icons/trash.png"
+    trashImg: "./icons/trash.png",
+    age: "38",
+    phoneNum: "873198430",
+    Address: "Bat-Yam"
   }];
 
 
 
 let ul = document.getElementById("contactsList");
-
+let InfoModal = document.getElementById("InfoModal");
 
 contactsArr.forEach((person, index) => {
   let li = document.createElement("li");
@@ -78,6 +90,7 @@ contactsArr.forEach((person, index) => {
   editBtn.type = "button";
   trashBtn.type = "button";
 
+  infoBtn.setAttribute("data-id", index);
 
   infoBtn.appendChild(infoImgBtn);
   editBtn.appendChild(editImgBtn);
@@ -92,5 +105,39 @@ contactsArr.forEach((person, index) => {
 
 
   ul.append(li);
+
+
+
+
 });
 
+
+const fillInfoPopUp = (index) => {
+  console.log(contactsArr[index]);
+  document.getElementById("namePop").textContent = contactsArr[index].name;
+
+  document.getElementById("agePop").textContent = contactsArr[index].age;
+
+  document.getElementById("TelPop").textContent = contactsArr[index].phoneNum;
+
+  document.getElementById("AddressPop").textContent = contactsArr[index].Address;
+
+}
+
+
+ul.addEventListener("click", function (e) {
+  let infoBtn = e.target.closest("button");
+  if (infoBtn && ul.contains(infoBtn)) {
+    InfoModal.style.display = "block";
+    document.body.style.overflow = "hidden";
+    console.log(infoBtn);
+    fillInfoPopUp(infoBtn.getAttribute("data-id"));
+  }
+});
+
+
+
+document.getElementById("closeModal").addEventListener("click", function () {
+  InfoModal.style.display = "none";
+  document.body.style.overflow = "auto";
+});
