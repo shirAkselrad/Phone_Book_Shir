@@ -92,6 +92,12 @@ contactsArr.forEach((person, index) => {
 
   infoBtn.setAttribute("data-id", index);
 
+
+  infoBtn.setAttribute("data-type", "info");
+  editBtn.setAttribute("data-type", "edit");
+  trashBtn.setAttribute("data-type", "trash");
+
+
   infoBtn.appendChild(infoImgBtn);
   editBtn.appendChild(editImgBtn);
   trashBtn.appendChild(trashImgBtn);
@@ -127,7 +133,7 @@ const fillInfoPopUp = (index) => {
 
 ul.addEventListener("click", function (e) {
   let infoBtn = e.target.closest("button");
-  if (infoBtn && ul.contains(infoBtn)) {
+  if (infoBtn && ul.contains(infoBtn) && infoBtn.getAttribute("data-type") === "info") {
     InfoModal.style.display = "block";
     document.body.style.overflow = "hidden";
     console.log(infoBtn);
