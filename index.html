@@ -26,10 +26,12 @@
       <div>
         <ul id="contactsList">
           <li class="Contact">
-            <input id="search_box" type="text" placeholder="search">
+            <input id="search_box" type="text" placeholder="search" data-type="searchBox">
             <div class="rightGroup">
-              <button class="btn" type="button"><img class="ImgBtn" src="./icons/add.png"></button>
-              <button class="btn" type="button"><img class="ImgBtn" src="./icons/trash.png"></button>
+              <button class="btn" type="button" data-type="addMainBtn"><img class="ImgBtn"
+                  src="./icons/add.png"></button>
+              <button class="btn" type="button" data-type="trashMainBtn"><img class="ImgBtn"
+                  src="./icons/trash.png"></button>
             </div>
           </li>
           <!-- <li class="Contact">
@@ -85,6 +87,7 @@
             </div>
 
           </li> -->
+          <p id="noContacts">There are no contacts in the phonebook yet! <br>to add click on the add person button above!</p>
         </ul>
       </div>
     </div>
@@ -94,21 +97,48 @@
   </footer>
 
 
-  <!-- Modal -->
+  <!--info Modal-->
   <div class="modal" id="InfoModal">
     <div class="modal-content">
       <span id="closeModal">&times;</span>
       <div class="modal__inner">
         <span class="ModalDetails">Name: </span>
-        <span class="ModalDetails"id="namePop"></span>
+        <span class="ModalDetails" id="namePop"></span>
         <span class="ModalDetails"><br>Age: </span>
         <span class="ModalDetails" id="agePop"></span>
-        <span class="ModalDetails" ><br>Phone number: </span>
+        <span class="ModalDetails"><br>Phone number: </span>
         <span class="ModalDetails" id="TelPop"></span>
         <span class="ModalDetails"><br>Address: </span>
         <span class="ModalDetails" id="AddressPop"></span>
       </div>
+    </div>
+  </div>
 
+
+
+<!--edit Modal-->
+  <div id="popupArticle" class="modal">
+    <div class="modal-content">
+      <span id="closePopupArticle" class="closeModal">&times;</span>
+      <h2>New Article</h2>
+      <form id="newArticleForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+  
+        <label for="intro">Intro:</label>
+        <input type="text" id="intro" name="intro" required>
+  
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" rows="5" required></textarea>
+  
+        <label for="image">Image URL:</label>
+        <input type="url" id="image" name="image">
+  
+        <div class="buttons">
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" id="closePopupBtn" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
     </div>
   </div>
 
