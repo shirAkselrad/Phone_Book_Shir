@@ -161,13 +161,28 @@ const fillEditPopUp = (index) => {
 
 
 
+ul.addEventListener("mouseover", function (e) {
+  let li = e.target.closest("li");
+  if (li && li.tagName === "LI" && !li.classList.contains("headerRow"))
+    li.style.background = "#def5ff";
+});
 
 
+
+ul.addEventListener("mouseout", function (e) {
+
+  if (e.target && e.target.tagName === "LI")
+    e.target.style.background = "white";
+});
 
 
 ul.addEventListener("click", function (e) {
   let ClickedBtn = e.target.closest("button");
   let pContacts = document.getElementById("noContacts");
+
+
+
+
 
   //info for each contact 
   if (ClickedBtn && ul.contains(ClickedBtn) && ClickedBtn.getAttribute("data-type") === "info") {
