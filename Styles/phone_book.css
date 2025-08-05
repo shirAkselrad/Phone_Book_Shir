@@ -19,7 +19,11 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  background-color: rgb(159, 225, 251);
+  /* background-color: rgb(159, 225, 251); */
+  /* background-image: url(../images/blue-brush-stroke-textured-background.jpg); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -35,10 +39,22 @@ main {
 /******************************
 * Header
 ******************************/
+#ChangeBackGroundBtn {
+
+
+  background-color: white;
+  padding: 1% 2.5%;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
 
 .link a {
-  font-size: 1.5em;
+  font-size: 2.5em;
   color: black;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -57,7 +73,7 @@ main {
 #logoBtn {
   width: 150px;
   align-items: center;
-  background-color: rgb(159, 225, 251);
+  background-color: transparent;
   border: none;
   display: block;
   margin: 0 auto;
@@ -108,6 +124,8 @@ h1 {
 
 ul {
   list-style: none;
+  overflow-y: auto;
+  max-height: 500px;
 }
 
 
@@ -120,7 +138,14 @@ ul {
 }
 
 .names {
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+
+.phoneNum{
+  font-size: 1.3em;
+  padding-left: 10px;
 }
 
 .ImgBtn {
@@ -143,7 +168,7 @@ ul {
 }
 
 .btn {
-  background-color: white;
+  background-color: transparent;
   border: none;
   cursor: pointer;
 }
@@ -151,8 +176,16 @@ ul {
 
 #search_box {
   width: 230px;
-  height: 30px;
-  ;
+  height: 40px;
+  font-size: 1.3em;
+}
+
+
+p,
+#noContacts {
+  display: none;
+  font-size: 1.4em;
+  text-align: center;
 }
 
 /* #endregion */
@@ -165,8 +198,9 @@ ul {
 ******************************/
 footer {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.3em;
   padding-bottom: 2%;
+  font-weight: bold;
 }
 
 /* #endregion */
@@ -178,7 +212,7 @@ footer {
 
 /* #region PopUpModal */
 /******************************
-* PopUpModal
+* PopUpModal-info
 ******************************/
 
 /* סגנון כללי לחלון המודל */
@@ -209,7 +243,7 @@ footer {
 }
 
 /* כפתור סגירה */
-#closeModal {
+.closeModal {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -219,7 +253,7 @@ footer {
   cursor: pointer;
 }
 
-#closeModal:hover {
+.closeModal:hover {
   color: crimson;
 }
 
@@ -264,5 +298,45 @@ footer {
     transform: translateY(0);
   }
 }
+
+/* #endregion */
+
+
+
+
+
+/* #region PopUpModal */
+/******************************
+* PopUpModal-edit
+******************************/
+
+#editPopUpForm {
+  font-size: 1.4em;
+}
+
+#editPopUpForm label {
+  display: block;
+}
+
+#editPopUpForm input {
+  font-size: 1em;
+  width: 200px;
+  height: 30px;
+}
+
+
+
+
+.save-btn,
+#closePopupBtn {
+  background-color: rgb(159, 214, 251);
+  font-size: 0.9em;
+  margin-top: 5%;
+  padding: 2%;
+  border-radius: 25%;
+  cursor: pointer;
+}
+
+
 
 /* #endregion */
