@@ -3,15 +3,15 @@
 
 
 
-document.body.style.backgroundImage = "url('../images/blue-brush-stroke-textured-background.jpg')";
+document.body.style.backgroundImage = "url('../Styles/blue-brush-stroke-textured-background.jpg')";
 
 //this function is changing the background
 let ChangeBackGroundBtn = document.getElementById("ChangeBackGroundBtn");
 ChangeBackGroundBtn.addEventListener("click", function (e) {
-  if (document.body.style.backgroundImage.includes("../images/blue-brush-stroke-textured-background.jpg"))
-    document.body.style.backgroundImage = "url('../images/flowers.jpg')";
+  if (document.body.style.backgroundImage.includes("../Styles/blue-brush-stroke-textured-background.jpg"))
+    document.body.style.backgroundImage = "url('../Styles/flowers.jpg')";
   else
-    document.body.style.backgroundImage = "url('../images/blue-brush-stroke-textured-background.jpg')";
+    document.body.style.backgroundImage = "url('../Styles/blue-brush-stroke-textured-background.jpg')";
 
 });
 
@@ -19,23 +19,22 @@ ChangeBackGroundBtn.addEventListener("click", function (e) {
 //this function is for the section contacts 
 let section = document.getElementById("sectionField");
 
-section.addEventListener("input", function(e)
-{
-  e.preventDefault(); 
+section.addEventListener("input", function (e) {
+  e.preventDefault();
   let allContacts = ul.querySelectorAll("li.Contact");
-  let sectionValue = section.value; 
+  let sectionValue = section.value;
 
 
-  for (let i = 0; i < contactsArr.length; i++) 
+  for (let i = 0; i < contactsArr.length; i++)
     if (sectionValue.toLowerCase() === "all" || contactsArr[i].section.toLowerCase() === sectionValue.toLowerCase())
       allContacts[i + 1].style.display = "flex";
-   else 
+    else
       allContacts[i + 1].style.display = "none";
-   
+
 
 });
 
-let now = new Date(); 
+let now = new Date();
 let contactsArr =
   [{
     image: "./images/man1.jpg",
@@ -239,7 +238,7 @@ const fillInfoPopUp = (index) => {
 
   document.getElementById("sectionPop").textContent = contactsArr[index].section;
 
-  document.getElementById("upDatePop").textContent = contactsArr[index].update; 
+  document.getElementById("upDatePop").textContent = contactsArr[index].update;
 
 }
 
@@ -249,7 +248,7 @@ const fillEditPopUp = (index) => {
   console.log(contactsArr[index]);
 
 
-  let now = new Date(); 
+  let now = new Date();
   document.getElementById("nameEdit").value = contactsArr[index].name;
 
   document.getElementById("phoneNumEdit").value = contactsArr[index].phoneNum;
@@ -262,9 +261,9 @@ const fillEditPopUp = (index) => {
 
   document.getElementById("ProfileImageEdit").value = contactsArr[index].image;
 
-  document.getElementById("sectionEdit").value = contactsArr[index].section; 
+  document.getElementById("sectionEdit").value = contactsArr[index].section;
 
-  contactsArr[index].update= now.toLocaleString(); 
+  contactsArr[index].update = now.toLocaleString();
 }
 
 
@@ -300,7 +299,7 @@ const editSaveBtnFunction = () => {
 
     let profileImage = document.getElementById("ProfileImageEdit").value;
 
-    let section = document.getElementById("sectionEdit").value.trim(); 
+    let section = document.getElementById("sectionEdit").value.trim();
 
 
     //checking that this name doesn't exist in the list 
@@ -310,15 +309,15 @@ const editSaveBtnFunction = () => {
         return;
       }
 
-      let now = new Date(); 
+    let now = new Date();
     contactsArr[index].name = name;
     contactsArr[index].phoneNum = phoneNum;
     contactsArr[index].address = address;
     contactsArr[index].age = age;
     contactsArr[index].email = email;
     contactsArr[index].image = profileImage;
-    contactsArr[index].section=section; 
-    contactsArr[index].update=now.toLocaleString(); 
+    contactsArr[index].section = section;
+    contactsArr[index].update = now.toLocaleString();
 
     removeAllContacts();
     contactsArr = fixedArray(contactsArr);
@@ -340,7 +339,7 @@ const cleanForm = () => {
 
   document.getElementById("emailEdit").value = "";
 
-  document.getElementById("sectionEdit").value=""; 
+  document.getElementById("sectionEdit").value = "";
 }
 
 const addNewContactFunction = () => {
@@ -360,7 +359,7 @@ const addNewContactFunction = () => {
 
     let email = document.getElementById("emailEdit").value.trim();
 
-    let section = document.getElementById("sectionEdit").value.trim(); 
+    let section = document.getElementById("sectionEdit").value.trim();
 
 
     //checking that this name doesn't exist in the list 
@@ -530,7 +529,7 @@ ul.addEventListener("click", function (e) {
   //add new contact, in case the new contact's name already exists it won't be added to the cotactsArr
   if (ClickedBtn && ul.contains(ClickedBtn) && ClickedBtn.getAttribute("data-type") === "addMainBtn") {
     e.preventDefault();
-    cleanForm(); 
+    cleanForm();
     editPopUp.style.display = "block";
     document.body.style.overflow = "hidden";
     saveFlag = true;
