@@ -13,17 +13,19 @@
 html,
 body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 
 body {
-  display: flex;
-  flex-direction: column;
-  /* background-color: rgb(159, 225, 251); */
-  /* background-image: url(../images/blue-brush-stroke-textured-background.jpg); */
+
+  background-image: url(../images/blue-brush-stroke-textured-background.jpg);
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
 }
 
 
@@ -43,6 +45,7 @@ main {
 
 
   background-color: white;
+  margin: 2%;
   padding: 1% 2.5%;
   font-size: 1.5em;
   font-weight: bold;
@@ -61,6 +64,7 @@ main {
 #linksGroup .link {
   display: inline;
   padding: 5%;
+
 }
 
 #linksGroup {
@@ -124,8 +128,11 @@ h1 {
 
 ul {
   list-style: none;
-  overflow-y: auto;
   max-height: 500px;
+}
+
+#contactsList {
+  overflow-y: auto;
 }
 
 
@@ -143,7 +150,7 @@ ul {
 }
 
 
-.phoneNum{
+.phoneNum {
   font-size: 1.3em;
   padding-left: 10px;
 }
@@ -180,12 +187,34 @@ ul {
   font-size: 1.3em;
 }
 
+#sectionField {
+  width: 230px;
+  height: 40px;
+  font-size: 1.3em;
+}
+
+
+#sectionLable {
+  font-size: 1.5em;
+}
+
 
 p,
 #noContacts {
   display: none;
   font-size: 1.4em;
   text-align: center;
+}
+
+
+
+#about_us_text {
+  font-size: 1.5em;
+}
+
+
+#contact_us_text {
+  font-size: 1.5em;
 }
 
 /* #endregion */
@@ -201,6 +230,8 @@ footer {
   font-size: 1.3em;
   padding-bottom: 2%;
   font-weight: bold;
+  margin-top: auto;
+
 }
 
 /* #endregion */

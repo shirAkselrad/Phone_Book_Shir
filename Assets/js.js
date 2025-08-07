@@ -16,6 +16,26 @@ ChangeBackGroundBtn.addEventListener("click", function (e) {
 });
 
 
+//this function is for the section contacts 
+let section = document.getElementById("sectionField");
+
+section.addEventListener("input", function(e)
+{
+  e.preventDefault(); 
+  let allContacts = ul.querySelectorAll("li.Contact");
+  let sectionValue = section.value; 
+
+
+  for (let i = 0; i < contactsArr.length; i++) 
+    if (sectionValue.toLowerCase() === "all" || contactsArr[i].section.toLowerCase() === sectionValue.toLowerCase())
+      allContacts[i + 1].style.display = "flex";
+   else 
+      allContacts[i + 1].style.display = "none";
+   
+
+});
+
+let now = new Date(); 
 let contactsArr =
   [{
     image: "./images/man1.jpg",
@@ -29,7 +49,8 @@ let contactsArr =
     phoneNum: "050-456789",
     address: "Nesher",
     email: "MoshePerze@gmail.com",
-    section: "Friends"
+    section: "Friends",
+    update: now.toLocaleString()
   },
   {
     image: "./images/women1.jpg",
@@ -43,7 +64,8 @@ let contactsArr =
     phoneNum: "054-678123",
     address: "Haifa",
     email: "RoniDalomi@gmail.com",
-    section: "Family"
+    section: "Family",
+    update: now.toLocaleString()
 
   },
   {
@@ -58,7 +80,8 @@ let contactsArr =
     phoneNum: "052-687219",
     address: "Tel-Aviv",
     email: "AvivGefen@gmail.com",
-    section: "Family"
+    section: "Family",
+    update: now.toLocaleString()
   },
   {
     image: "./images/women2.jpg",
@@ -72,7 +95,8 @@ let contactsArr =
     phoneNum: "057-198430",
     address: "Bat-Yam",
     email: "ZehavaBen@gmail.com",
-    section: "Work"
+    section: "Work",
+    update: now.toLocaleString()
   }];
 
 
@@ -215,12 +239,17 @@ const fillInfoPopUp = (index) => {
 
   document.getElementById("sectionPop").textContent = contactsArr[index].section;
 
+  document.getElementById("upDatePop").textContent = contactsArr[index].update; 
+
 }
 
 
 const fillEditPopUp = (index) => {
   //this function fill in all the inputs in the edit popup 
   console.log(contactsArr[index]);
+
+
+  let now = new Date(); 
   document.getElementById("nameEdit").value = contactsArr[index].name;
 
   document.getElementById("phoneNumEdit").value = contactsArr[index].phoneNum;
@@ -234,6 +263,8 @@ const fillEditPopUp = (index) => {
   document.getElementById("ProfileImageEdit").value = contactsArr[index].image;
 
   document.getElementById("sectionEdit").value = contactsArr[index].section; 
+
+  contactsArr[index].update= now.toLocaleString(); 
 }
 
 
@@ -269,7 +300,6 @@ const editSaveBtnFunction = () => {
 
     let profileImage = document.getElementById("ProfileImageEdit").value;
 
-
     let section = document.getElementById("sectionEdit").value.trim(); 
 
 
@@ -280,6 +310,7 @@ const editSaveBtnFunction = () => {
         return;
       }
 
+      let now = new Date(); 
     contactsArr[index].name = name;
     contactsArr[index].phoneNum = phoneNum;
     contactsArr[index].address = address;
@@ -287,6 +318,7 @@ const editSaveBtnFunction = () => {
     contactsArr[index].email = email;
     contactsArr[index].image = profileImage;
     contactsArr[index].section=section; 
+    contactsArr[index].update=now.toLocaleString(); 
 
     removeAllContacts();
     contactsArr = fixedArray(contactsArr);
@@ -341,6 +373,7 @@ const addNewContactFunction = () => {
 
 
     //creating the newContact 
+    let now = new Date(); // this is for the date and time update 
     const newContact =
     {
       image: profileImage,
@@ -354,7 +387,8 @@ const addNewContactFunction = () => {
       phoneNum: phoneNum,
       address: address,
       email: email,
-      section: section
+      section: section,
+      update: now.toLocaleString()
     }
 
     removeAllContacts();

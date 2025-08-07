@@ -6,20 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>PhoneBook</title>
+  <link rel="stylesheet" href="./Styles/phone_book.css">
 </head>
-<link rel="stylesheet" href="./Styles/phone_book.css">
+
 
 <body>
 
   <header>
-
+    <button id="ChangeBackGroundBtn">background change</button>
     <ul id="linksGroup">
       <li class="link"><a href="./about_us.html">About us</a></li>
       <li class="link"><a href="./contact_us.html">Contact us</a></li>
       <li class="link"><a href="./index.html">Home page</a></li>
-      <button id="ChangeBackGroundBtn">background change</button>
     </ul>
-    <a id="logoBtn" href="./index.html"><img id="logoImg" src="./icons/logo.png"></a>
+    <a id="logoBtn" href="./index.html"><img id="logoImg" src="./icons/logo.png" alt="logoImg"></a>
     <h1>PhoneBook</h1>
   </header>
   <main>
@@ -28,11 +28,22 @@
         <ul id="contactsList">
           <li class="Contact headerRow">
             <input id="search_box" type="text" placeholder="search" data-type="searchBox">
+            <form>
+              <div>
+                <label id="sectionLable" for="sectionField">section:</label>
+                <select name="section" id="sectionField">
+                  <option value="All">All</option>
+                  <option value="Friends">Friends</option>
+                  <option value="Family">Family</option>
+                  <option value="Work">Work</option>
+                </select>
+              </div>
+            </form>
             <div class="rightGroup">
               <button id="addMainBtn" class="btn" type="button" data-type="addMainBtn"><img class="ImgBtn"
-                  src="./icons/add.png"></button>
-              <button class="btn" type="button" data-type="trashMainBtn"><img class="ImgBtn"
-                  src="./icons/trash.png"></button>
+                  src="./icons/add.png" alt="addMainImg"></button>
+              <button class="btn" type="button" data-type="trashMainBtn"><img class="ImgBtn" src="./icons/trash.png"
+                  alt="trashMainImg"></button>
             </div>
           </li>
           <!-- <li class="Contact">
@@ -88,9 +99,10 @@
             </div>
 
           </li> -->
-          <p id="noContacts">There are no contacts in the phonebook yet! <br>to add click on the add person button
-            above!</p>
+
         </ul>
+        <p id="noContacts">There are no contacts in the phonebook yet! <br>to add click on the add person button
+          above!</p>
       </div>
     </div>
   </main>
@@ -116,6 +128,8 @@
         <span class="ModalDetails" id="EmailPop"></span>
         <span class="ModalDetails"><br>Section: </span>
         <span class="ModalDetails" id="sectionPop"></span>
+        <span class="ModalDetails"><br>Last update: </span>
+        <span class="ModalDetails" id="upDatePop"></span>
       </div>
     </div>
   </div>
@@ -139,8 +153,8 @@
         <label for="addressEdit">Address:</label>
         <input type="text" id="addressEdit" name="address">
 
-          <label for="emailEdit">Email:</label>
-          <input type="text" id="emailEdit" name="email">
+        <label for="emailEdit">Email:</label>
+        <input type="text" id="emailEdit" name="email">
 
         <label for="ageEdit">Age:</label>
         <input type="text" id="ageEdit" name="age">
@@ -149,7 +163,7 @@
         <label for="ProfileImageEdit">Profile image :</label>
         <input type="url" id="ProfileImageEdit" name="ProfileImage">
 
-        <label for="section">Section:</label>
+        <label for="sectionEdit">Section:</label>
         <input type="text" id="sectionEdit" name="section">
 
 
