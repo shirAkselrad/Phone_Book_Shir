@@ -20,10 +20,10 @@ body {
   display: flex;
   flex-direction: column;
   /* background-color: rgb(159, 225, 251); */
-  background-image: url(../images/blue-brush-stroke-textured-background.jpg);
+  /* background-image: url(../images/blue-brush-stroke-textured-background.jpg); */
   background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -39,6 +39,17 @@ main {
 /******************************
 * Header
 ******************************/
+#ChangeBackGroundBtn {
+
+
+  background-color: white;
+  padding: 1% 2.5%;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
 
 .link a {
   font-size: 2.5em;
@@ -62,7 +73,7 @@ main {
 #logoBtn {
   width: 150px;
   align-items: center;
-  background-color:transparent;
+  background-color: transparent;
   border: none;
   display: block;
   margin: 0 auto;
@@ -113,6 +124,11 @@ h1 {
 
 ul {
   list-style: none;
+  max-height: 500px;
+}
+
+#contactsList {
+  overflow-y: auto;
 }
 
 
@@ -125,7 +141,14 @@ ul {
 }
 
 .names {
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+
+.phoneNum {
+  font-size: 1.3em;
+  padding-left: 10px;
 }
 
 .ImgBtn {
@@ -156,15 +179,38 @@ ul {
 
 #search_box {
   width: 230px;
-  height: 30px;
+  height: 40px;
+  font-size: 1.3em;
+}
 
+#sectionField {
+  width: 230px;
+  height: 40px;
+  font-size: 1.3em;
 }
 
 
+#sectionLable {
+  font-size: 1.5em;
+}
+
+
+p,
 #noContacts {
   display: none;
   font-size: 1.4em;
   text-align: center;
+}
+
+
+
+#about_us_text {
+  font-size: 1.5em;
+}
+
+
+#contact_us_text {
+  font-size: 1.5em;
 }
 
 /* #endregion */

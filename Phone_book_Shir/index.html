@@ -17,6 +17,7 @@
       <li class="link"><a href="./about_us.html">About us</a></li>
       <li class="link"><a href="./contact_us.html">Contact us</a></li>
       <li class="link"><a href="./index.html">Home page</a></li>
+      <button id="ChangeBackGroundBtn">background change</button>
     </ul>
     <a id="logoBtn" href="./index.html"><img id="logoImg" src="./icons/logo.png"></a>
     <h1>PhoneBook</h1>
@@ -27,8 +28,19 @@
         <ul id="contactsList">
           <li class="Contact headerRow">
             <input id="search_box" type="text" placeholder="search" data-type="searchBox">
+            <form>
+              <div>
+                <label id="sectionLable" for="sectionField">section:</label>
+                <select name="section" id="sectionField">
+                  <option value="All">All</option>
+                  <option value="Friends">Friends</option>
+                  <option value="Family">Family</option>
+                  <option value="Work">Work</option>
+                </select>
+              </div>
+            </form>
             <div class="rightGroup">
-              <button class="btn" type="button" data-type="addMainBtn"><img class="ImgBtn"
+              <button id="addMainBtn" class="btn" type="button" data-type="addMainBtn"><img class="ImgBtn"
                   src="./icons/add.png"></button>
               <button class="btn" type="button" data-type="trashMainBtn"><img class="ImgBtn"
                   src="./icons/trash.png"></button>
@@ -113,6 +125,10 @@
         <span class="ModalDetails" id="AddressPop"></span>
         <span class="ModalDetails"><br>Email: </span>
         <span class="ModalDetails" id="EmailPop"></span>
+        <span class="ModalDetails"><br>Section: </span>
+        <span class="ModalDetails" id="sectionPop"></span>
+        <span class="ModalDetails"><br>Last update: </span>
+        <span class="ModalDetails" id="upDatePop"></span>
       </div>
     </div>
   </div>
@@ -125,28 +141,33 @@
       <span class="closeModal">&times;</span>
       <h2>Edit Contact</h2>
       <form id="editPopUpForm">
-       
-          <label for="nameEdit">Name:</label>
-          <input type="text" id="nameEdit" name="name" required>
-      
-          <label for="phoneNumEdit">Phone-number:</label>
-          <input type="text" id="phoneNumEdit" name="phoneNum" required>
-        
 
-          <label for="addressEdit">Address:</label>
-          <input type="text" id="addressEdit" name="address">
+        <label for="nameEdit">Name:</label>
+        <input type="text" id="nameEdit" name="name" required>
+
+        <label for="phoneNumEdit">Phone-number:</label>
+        <input type="text" id="phoneNumEdit" name="phoneNum" required>
 
 
-          <label for="ageEdit">Age:</label>
-          <input type="text" id="ageEdit" name="age">
+        <label for="addressEdit">Address:</label>
+        <input type="text" id="addressEdit" name="address">
+
+          <label for="emailEdit">Email:</label>
+          <input type="text" id="emailEdit" name="email">
+
+        <label for="ageEdit">Age:</label>
+        <input type="text" id="ageEdit" name="age">
 
 
-          <label for="ProfileImageEdit">Profile image :</label>
-          <input type="url" id="ProfileImageEdit" name="ProfileImage">
-        
+        <label for="ProfileImageEdit">Profile image :</label>
+        <input type="url" id="ProfileImageEdit" name="ProfileImage">
+
+        <label for="section">Section:</label>
+        <input type="text" id="sectionEdit" name="section">
+
 
         <div class="buttons">
-          <button type="submit" class="save-btn">Save</button>
+          <button id="edit-save-btn" type="submit" class="save-btn">Save</button>
           <button type="button" id="closePopupBtn" class="cancel-btn">Cancel</button>
         </div>
       </form>
