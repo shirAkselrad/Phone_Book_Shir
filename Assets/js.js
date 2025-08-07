@@ -3,15 +3,15 @@
 
 
 
-document.body.style.backgroundImage = "url('../Styles/blue_brush.jpg')";
+document.body.style.backgroundImage = "url('Styles/blue_brush.jpg')";
 
 //this function is changing the background
 let ChangeBackGroundBtn = document.getElementById("ChangeBackGroundBtn");
 ChangeBackGroundBtn.addEventListener("click", function (e) {
-  if (document.body.style.backgroundImage.includes("../Styles/blue_brush.jpg"))
-    document.body.style.backgroundImage = "url('../Styles/flowers.jpg')";
+  if (document.body.style.backgroundImage.includes("Styles/blue_brush.jpg"))
+    document.body.style.backgroundImage = "url('Styles/flowers.jpg')";
   else
-    document.body.style.backgroundImage = "url('../Styles/blue_brush.jpg')";
+    document.body.style.backgroundImage = "url('Styles/blue_brush.jpg')";
 
 });
 
